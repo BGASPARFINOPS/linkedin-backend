@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  const url = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
-    REDIRECT_URI
+  const url = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.CLIENT_ID}&redirect_uri=${encodeURIComponent(
+    process.env.REDIRECT_URI
   )}&scope=openid%20profile%20w_member_social`;
 
   res.redirect(url);
