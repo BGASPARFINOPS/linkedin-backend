@@ -95,6 +95,8 @@ app.post("/post", async (req, res) => {
   res.send(data);
 });
 
-app.listen(3000, () => {
-  console.log("Servidor listo");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Servidor listo en puerto", PORT);
 });
